@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, animated, useSpringRef, useChain } from '@react-spring/web';
 import styles from '../style.modal.module.css';
+import cardData from '../data/cardData';
 
 function Modal({ isOpen, onClose, cardData }) {
   // Fade-in and scale-up animation for modal entrance

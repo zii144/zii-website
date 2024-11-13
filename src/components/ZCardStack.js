@@ -1,20 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { animated, to, useSprings } from '@react-spring/web';
 import { useDrag } from 'react-use-gesture';
 import Modal from './ZModal';
-
+import cardData from '../data/cardData'; // Correct import
 import styles from '../style.card.stack.module.css';
-
-import cardData from '../data/cardData';
-
-const cardDemoData = [
-    'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
-]
 
 const toSpring = (i) => ({
   x: 0,
@@ -35,10 +24,16 @@ function Deck() {
   
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
+  const isDraggingRef = useRef(false);
+  const movementThreshold = 10; // Movement threshold to detect dragging
 
   const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
     const trigger = velocity > 0.2;
     const dir = xDir < 0 ? -1 : 1;
+
+    // Set dragging state based on movement
+    isDraggingRef.current = down && Math.abs(mx) > movementThreshold;
+
     if (!down && trigger) gone.add(index);
     api.start((i) => {
       if (index !== i) return;
@@ -54,16 +49,22 @@ function Deck() {
         config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
       };
     });
-    if (!down && gone.size === cardData.length)
+
+    if (!down && gone.size === cardData.length) {
       setTimeout(() => {
         gone.clear();
         api.start((i) => toSpring(i));
       }, 600);
+    }
   });
 
   const openModal = (card) => {
-    setSelectedCard(card);
-    setModalOpen(true);
+    setTimeout(() => {
+      if (!isDraggingRef.current) { // Check dragging state with a delay
+        setSelectedCard(card);
+        setModalOpen(true);
+      }
+    }, 0); // Set a minimal delay to allow state updates
   };
 
   const closeModal = () => {
@@ -79,7 +80,7 @@ function Deck() {
             {...bind(i)}
             style={{
               transform: to([rot, scale], trans),
-              backgroundImage: `url(${cardDemoData[i]})`, // Corrected property name
+              backgroundImage: `url(${cardData[i].url})`,
             }}
             className={styles.card}
             onClick={() => openModal(cardData[i])}
