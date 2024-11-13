@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
+import ZCardStack from './components/ZCardStack';
 import './App.css';
+import GradientBackground from './components/GradientBackground';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <GradientBackground />
+      <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent:'center', height: '100%'}}>
+        <ZCardStack />
+      </div>
     </div>
   );
 }
