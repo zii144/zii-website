@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=LXGW+WenKai+Mono+TC:wght@300;400;700&family=LXGW+WenKai+TC:wght@300;400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 html,
 body,
 #root {
@@ -8,7 +10,9 @@ body,
 body {
   background-color: #282c34;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "LXGW WenKai TC", "Tinos", "DM Serif Text", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   margin: 0;
   padding: 0;
 }
@@ -20,9 +24,9 @@ body {
 }
 
 :root {
-  --step0: #ff615d;
+  --step0: #4f5a74;
   --step1: #bad5ea;
-  --step2: #fd8769;
+  --step2: #0a0c38;
   --step3: #356d94;
-  --step4: #ffdcb3;
+  --step4: #b3c1ff;
 }

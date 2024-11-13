@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSpring, animated, useSpringRef, useChain } from '@react-spring/web';
 import styles from '../style.modal.module.css';
-import cardData from '../data/cardData';
 
 function Modal({ isOpen, onClose, cardData }) {
   // Fade-in and scale-up animation for modal entrance
@@ -35,10 +34,10 @@ function Modal({ isOpen, onClose, cardData }) {
         style={{ ...fadeIn, transform: fadeIn.transform.to(t => `${t} ${pulse.scale}`) }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className={styles.modalTitle}>Card Information</h2>
+        <h2 className={styles.modalTitle}>資料</h2>
         <img src={'https://i2.wp.com/www.wendyzhou.se/blog/wp-content/uploads/2019/08/uixninja.png?fit=1600%2C1200&ssl=1'} alt="Card" className={styles.modalImage} style={pulse} />
         <p className={styles.modalDescription}>{cardData.description}</p>
-        <button onClick={onClose} className={styles.closeButton}>Close</button>
+        <button onClick={onClose} className={styles.closeButton}>關閉</button>
       </animated.div>
     </div>
   );
