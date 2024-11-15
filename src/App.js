@@ -1,16 +1,28 @@
-import React, { useState } from 'react'
-import ZCardStack from './components/ZCardStack';
-import './App.css';
-import GradientBackground from './components/GradientBackground';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+
+import GradientBackground from "./components/GradientBackground";
+import ZCardStack from "./components/ZCardStack";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
-      <GradientBackground />
-      <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent:'center', height: '100%'}}>
-        <ZCardStack />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path=""
+          element={
+            <div className="app-container">
+              <GradientBackground />
+              <div className="content-container">
+                <ZCardStack />
+              </div>
+              <Navigation />
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
