@@ -1,7 +1,7 @@
 {
   "name": "zii-website",
   "version": "0.1.0",
-  "homepage": "https://zii-website.github.io/",
+  "homepage": "https://zii144.github.io/zii-website/",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
