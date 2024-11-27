@@ -21,7 +21,7 @@ function Navigation() {
           <NavigationIcon IconComponent={TbBriefcase2} path="/skills" />
         </li>
         <li className={styles.navItem}>
-          <NavigationIcon IconComponent={TbConfetti} path="/concept" />
+          <NavigationIcon IconComponent={TbConfetti} path="/contactme" />
         </li>
       </ul>
     </nav>

@@ -9,11 +9,20 @@ const NavigationIcon = ({ IconComponent, path }) => {
   }));
 
   const handleMouseEnter = () => {
-    animate.start({ transform: "scale(1.1)" });
+    const randomRotate = Math.floor(Math.random() * 20) - 10;
+    animate.start({
+      transform: "scale(1.3)",
+      y: -20,
+      rotate: randomRotate,
+    });
   };
 
   const handleMouseLeave = () => {
-    animate({ transform: "scale(1)" });
+    animate({
+      transform: "scale(1)",
+      y: 0,
+      rotate: 0,
+    });
   };
 
   return (
