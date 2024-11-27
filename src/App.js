@@ -4,10 +4,13 @@ import "./App.css";
 import GradientBackground from "./components/GradientBackground";
 import ZCardStack from "./components/ZCardStack";
 import Navigation from "./components/Navigation";
+import Works from "./components/Works";
+import SkillSet from "./components/SkillSet";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navigation />
       <Routes>
         <Route
           path=""
@@ -17,10 +20,10 @@ function App() {
               <div className="content-container">
                 <ZCardStack />
               </div>
-              <Navigation />
             </div>
           }
         />
+        <Route path="/skills" element={<SkillSet />} />
       </Routes>
     </BrowserRouter>
   );

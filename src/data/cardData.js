@@ -37,14 +37,14 @@ const cardData = [
   {
     id: 6,
     title: "短影片製作",
-    url: "https://static.vecteezy.com/system/resources/previews/000/602/787/original/creative-letter-z-logo-concept-design-templates-vector.jpg",
+    url: "https://drive.google.com/thumbnail?id=1-YX7sPFvJ4Kl-xQte7SULEH_FVTf3Vho&sz=w1000",
     description:
       "專注於短影片製作，包括影片拍攝、快速剪輯和優化，適合社交媒體推廣，針對目標受眾設計吸引人內容。",
   },
   {
     id: 7,
     title: "網站設計",
-    url: "https://static.vecteezy.com/system/resources/previews/000/602/787/original/creative-letter-z-logo-concept-design-templates-vector.jpg",
+    url: "https://drive.google.com/thumbnail?id=1-_Vld-WErsXY27_o9BvJunwL2av3RnCl&sz=w1000",
     description:
       "設計專業網站，著重於簡潔大方的使用者介面，運用黑白灰的色彩搭配，突出重要內容，確保觀眾能專注於核心資訊。",
   },

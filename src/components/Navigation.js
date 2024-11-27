@@ -18,7 +18,7 @@ function Navigation() {
           <NavigationIcon IconComponent={TbHome} path="/" />
         </li>
         <li className={styles.navItem}>
-          <NavigationIcon IconComponent={TbBriefcase2} path="/works" />
+          <NavigationIcon IconComponent={TbBriefcase2} path="/skills" />
         </li>
         <li className={styles.navItem}>
           <NavigationIcon IconComponent={TbConfetti} path="/concept" />
