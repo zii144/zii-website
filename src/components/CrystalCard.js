@@ -5,6 +5,17 @@ import YouTube from "react-youtube";
 import styles from "../style.skill.module.css";
 
 const CrystalCard = ({ skill, videoId }) => {
+  const skillNameMapping = {
+    JavaScript: "javascript",
+    "C#": "csharp",
+    Swift: "swift",
+    React: "react",
+    Vue: "vuejs",
+    Unity: "unity",
+    SwiftUI: "swift", // SwiftUI uses the same icon as Swift
+    Firebase: "firebase",
+  };
+
   const [isHovered, setHovered] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -13,9 +24,6 @@ const CrystalCard = ({ skill, videoId }) => {
     transform: isHovered
       ? "scale(1.05) rotateX(10deg)"
       : "scale(1) rotateX(0deg)",
-    boxShadow: isHovered
-      ? "0px 15px 30px rgba(0, 212, 255, 0.5)"
-      : "0px 8px 20px rgba(0, 0, 0, 0.2)",
     config: { mass: 1, tension: 200, friction: 20 },
   });
 
@@ -33,7 +41,11 @@ const CrystalCard = ({ skill, videoId }) => {
       >
         <div className={styles.crystalCardContent}>
           <img
-            src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.name.toLowerCase()}/${skill.name.toLowerCase()}-original.svg`}
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${
+              skillNameMapping[skill.name] || skill.name.toLowerCase()
+            }/${
+              skillNameMapping[skill.name] || skill.name.toLowerCase()
+            }-original.svg`}
             alt={`${skill.name} icon`}
             className={styles.skillIcon}
           />
