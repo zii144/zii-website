@@ -10,7 +10,14 @@ import ContactMe from "./components/ContactMe";
 import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
 
+import { useTranslation } from "react-i18next";
+
 function App() {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -20,6 +27,12 @@ function App() {
             path=""
             element={
               <div className="app-container">
+                <h1>{t("welcome")}</h1>
+                <p>{t("description")}</p>
+                <button onClick={() => changeLanguage("en")}>English</button>
+                <button onClick={() => changeLanguage("zh")}>
+                  Traditional Chinese
+                </button>
                 <GradientBackground />
                 <div className="content-container">
                   <ZCardStack />
