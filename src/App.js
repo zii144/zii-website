@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 
 import GradientBackground from "./components/GradientBackground";
@@ -10,40 +10,41 @@ import ContactMe from "./components/ContactMe";
 import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { useTranslation } from "react-i18next";
-import { useLocale } from "./LocaleContext";
+import { useEffect } from "react";
 
 function App() {
-  const { t, i18n } = useTranslation();
-  const { changeLanguage } = useLocale();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "hidden";
+    };
+  }, [location]);
 
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Navigation />
-        <Routes>
-          <Route
-            path=""
-            element={
-              <div className="app-container">
-                <h1>
-                  {t("current language")}: {i18n.language}
-                </h1>
-                <button onClick={() => changeLanguage("en")}>English</button>
-                <button onClick={() => changeLanguage("zh")}>
-                  Traditional Chinese
-                </button>
-                <GradientBackground />
-                <div className="content-container">
-                  <ZCardStack />
-                </div>
+      <Navigation />
+      <Routes>
+        <Route
+          path=""
+          element={
+            <div className="app-container">
+              <GradientBackground />
+              <div className="content-container">
+                <ZCardStack />
               </div>
-            }
-          />
-          <Route path="/skills" element={<SkillSet />} />
-          <Route path="/contactMe" element={<ContactMe />} />
-        </Routes>
-      </BrowserRouter>
+            </div>
+          }
+        />
+        <Route path="/skills" element={<SkillSet />} />
+        <Route path="/contactMe" element={<ContactMe />} />
+      </Routes>
     </ThemeProvider>
   );
 }

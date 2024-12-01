@@ -5,18 +5,33 @@ import YouTube from "react-youtube";
 import styles from "../style.skill.module.css";
 
 const CrystalCard = ({ skill, videoId }) => {
-  const skillNameMapping = {
-    JavaScript: "javascript",
-    "C#": "csharp",
-    Swift: "swift",
-    React: "react",
-    "VS Code": "vscode",
-    "Adobe Illustrator": "illustrator",
-    "Adobe Photoshop": "photoshop",
-    Vue: "vuejs",
-    Unity: "unity",
-    SwiftUI: "swift",
-    Firebase: "firebase",
+  const getDeviconUrl = (skillName, isOriginal = true) => {
+    const skillNameMapping = {
+      JavaScript: "javascript",
+      "C#": "csharp",
+      Swift: "swift",
+      React: "react",
+      Vue: "vuejs",
+      Unity: "unity",
+      SwiftUI: "swift",
+      Firebase: "firebase",
+      "VS Code": "vscode",
+      "Adobe Illustrator": "illustrator",
+      "Adobe Photoshop": "photoshop",
+    };
+
+    // Map skill name to devicon key
+    const iconKey = skillNameMapping[skillName] || skillName.toLowerCase();
+
+    // Handle Adobe Illustrator's special case
+    if (iconKey === "illustrator") {
+      return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg`;
+    }
+
+    // Default icon URL
+    const version = "latest";
+    const style = isOriginal ? "original" : "plain";
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon@${version}/icons/${iconKey}/${iconKey}-${style}.svg`;
   };
 
   const [isHovered, setHovered] = useState(false);
@@ -44,11 +59,7 @@ const CrystalCard = ({ skill, videoId }) => {
       >
         <div className={styles.crystalCardContent}>
           <img
-            src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${
-              skillNameMapping[skill.name] || skill.name.toLowerCase()
-            }/${
-              skillNameMapping[skill.name] || skill.name.toLowerCase()
-            }-original.svg`}
+            src={getDeviconUrl(skill.name)}
             alt={`${skill.name} icon`}
             className={styles.skillIcon}
           />

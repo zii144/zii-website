@@ -12,7 +12,7 @@ const ContactMe = () => {
     <Container
       maxWidth="sm"
       sx={{
-        mt: 5,
+        mt: 4,
         p: 3,
         background: "rgba(255, 255, 255, 0.1)", // Semi-transparent background
         borderRadius: "12px",
@@ -20,6 +20,11 @@ const ContactMe = () => {
         backdropFilter: "blur(12px)", // Frosted glass effect
         WebkitBackdropFilter: "blur(12px)", // Frosted glass for Safari
         border: "1px solid rgba(255, 255, 255, 0.2)", // Subtle border
+        mx: { xs: 2, sm: "auto" },
+        px: { xs: 2, sm: "auto" },
+        overflow: "hidden",
+        width: "100%",
+        maxWidth: "90%",
       }}
     >
       <Typography
