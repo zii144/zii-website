@@ -1,6 +1,97 @@
-
 {
-    "welcome": "歡迎來到 Zii 網站",
-    "description": "探索我的技能和項目。"
+  "current language": "目前語言",
+  "navigation": {
+    "home": "首頁",
+    "skills": "技能",
+    "contact": "聯絡我"
+  },
+  "buttons": {
+    "switch_to_english": "切換到英文",
+    "switch_to_chinese": "切換到繁體中文",
+    "explore_skills": "探索我的技能",
+    "contact_me": "與我聯繫"
+  },
+  "skills": {
+    "categories": {
+      "programmingLanguages": "程式語言",
+      "frontendDevelopment": "前端開發",
+      "frameworksAndLibraries": "框架與庫",
+      "tools": "工具",
+      "design": "設計",
+      "others": "其他"
+    },
+    "skillsList": {
+      "javascript": {
+        "name": "JavaScript",
+        "description": "擅長構建交互式 Web 應用，並利用 ES6+ 特性來編寫清晰、可維護的代碼。"
+      },
+      "csharp": {
+        "name": "C#",
+        "description": "在 Unity 遊戲開發方面擁有豐富經驗，專注於優化 3D 交互場景的腳本。"
+      },
+      "swift": {
+        "name": "Swift",
+        "description": "精通使用 Swift 開發 iOS 應用，採用 SwiftUI 實現現代化的用戶界面設計和流暢動畫。"
+      },
+      "react": {
+        "name": "React",
+        "description": "熟練使用 React、React Router 和 Context API 構建響應式、動態 Web 應用。"
+      },
+      "vue": {
+        "name": "Vue",
+        "description": "熟悉使用 Vue 和 Vuex 開發輕量、快速加載的單頁應用。"
+      },
+      "unity": {
+        "name": "Unity",
+        "description": "專注於遊戲機制、交互式 3D 場景和使用 Unity 的時間線和 DOTween 實現動畫。"
+      },
+      "swiftUI": {
+        "name": "SwiftUI",
+        "description": "擅長使用 SwiftUI 構建自定義動畫和用戶友好的 iOS 界面，符合 Apple HIG 規範。"
+      },
+      "firebase": {
+        "name": "Firebase",
+        "description": "用於實時數據庫管理和移動與 Web 應用的用戶認證。"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "廣泛用於版本控制，協作項目以及保持乾淨有序的代碼庫。"
+      },
+      "vsCode": {
+        "name": "VS Code",
+        "description": "JavaScript 和 React 開發的首選 IDE，使用自定義擴展提高生產力。"
+      },
+      "xcode": {
+        "name": "Xcode",
+        "description": "Swift 和 SwiftUI 開發的主要工具，利用調試工具和性能分析進行優化。"
+      },
+      "figma": {
+        "name": "Figma",
+        "description": "用於設計直觀的用戶界面並為應用和網站創建交互式原型。"
+      },
+      "adobeIllustrator": {
+        "name": "Adobe Illustrator",
+        "description": "擅長創建矢量藝術、線框圖和數位與印刷媒體的品牌資產。"
+      },
+      "adobePhotoshop": {
+        "name": "Adobe Photoshop",
+        "description": "用於圖像編輯、UI 元素和為 Web 與遊戲界面創建模型。"
+      },
+      "netlify": {
+        "name": "Netlify",
+        "description": "部署和託管現代 Web 應用，並設置持續集成管道。"
+      },
+      "heroku": {
+        "name": "Heroku",
+        "description": "熟練於部署具有可擴展後端解決方案的全棧應用。"
+      },
+      "wordpress": {
+        "name": "WordPress",
+        "description": "為數位與媒體整合設計優雅簡約的用戶體驗網站。"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Zii 網站。保留所有權利。"
+  }
 }
-  

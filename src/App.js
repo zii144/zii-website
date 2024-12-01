@@ -11,12 +11,11 @@ import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { useTranslation } from "react-i18next";
+import { useLocale } from "./LocaleContext";
 
 function App() {
   const { t, i18n } = useTranslation();
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
+  const { changeLanguage } = useLocale();
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,8 +26,9 @@ function App() {
             path=""
             element={
               <div className="app-container">
-                <h1>{t("welcome")}</h1>
-                <p>{t("description")}</p>
+                <h1>
+                  {t("current language")}: {i18n.language}
+                </h1>
                 <button onClick={() => changeLanguage("en")}>English</button>
                 <button onClick={() => changeLanguage("zh")}>
                   Traditional Chinese

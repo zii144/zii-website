@@ -10,9 +10,12 @@ const CrystalCard = ({ skill, videoId }) => {
     "C#": "csharp",
     Swift: "swift",
     React: "react",
+    "VS Code": "vscode",
+    "Adobe Illustrator": "illustrator",
+    "Adobe Photoshop": "photoshop",
     Vue: "vuejs",
     Unity: "unity",
-    SwiftUI: "swift", // SwiftUI uses the same icon as Swift
+    SwiftUI: "swift",
     Firebase: "firebase",
   };
 
