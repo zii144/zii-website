@@ -1,20 +1,18 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "src/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    { "src": "/api/.*", "dest": "/api/index.js" }
-  ],
   "functions": {
-    "api/*.js": {
+    "api/main.py": {
+      "runtime": "@vercel/python",
       "memory": 1024,
       "maxDuration": 10
     }
   },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/main.py"
+    }
+  ],
   "env": {
     "NODE_ENV": "production"
   },
