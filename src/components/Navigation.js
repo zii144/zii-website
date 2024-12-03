@@ -1,10 +1,4 @@
-import {
-  TbHome,
-  TbBriefcase2,
-  TbBriefcase2Filled,
-  TbConfetti,
-  TbConfettiOff,
-} from "react-icons/tb";
+import { TbHome, TbBriefcase2, TbConfetti } from "react-icons/tb";
 
 import NavigationIcon from "./NavigationIcon";
 
