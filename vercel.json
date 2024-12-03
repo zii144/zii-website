@@ -15,22 +15,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        } 
-      ]
-    }
-  ],
-  "redirects": [
-    { "source": "/old-path", "destination": "/new-path", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/about", "destination": "/company/about" }
-  ]
+  }
 }
