@@ -9,7 +9,8 @@
     "switch_to_english": "Switch to English",
     "switch_to_chinese": "Switch to Traditional Chinese",
     "explore_skills": "Explore My Skills",
-    "contact_me": "Get in Touch"
+    "contact_me": "Get in Touch",
+    "send_contact": "Send"
   },
   "skills": {
     "categories": {
@@ -90,6 +91,12 @@
         "description": "Customized WordPress websites for elegant, minimal UX design and media integration."
       }
     }
+  },
+  "contact":{
+    "welcome_sentence": "Feel free to reach out for collaborations or just a friendly hello!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message"
   },
   "footer": {
     "copyright": "© 2024 Zii Website. All rights reserved."

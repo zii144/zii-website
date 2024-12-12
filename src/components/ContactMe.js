@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, TextField, Button, Typography, Container } from "@mui/material";
 import theme from "./colorTheme";
+import i18next from "i18next";
 
 const ContactMe = () => {
   const handleSubmit = (e) => {
@@ -36,7 +37,7 @@ const ContactMe = () => {
           fontWeight: "bold",
         }}
       >
-        Contact Me
+        {i18next.t("buttons.contact_me")}
       </Typography>
       <Typography
         variant="body1"
@@ -44,7 +45,7 @@ const ContactMe = () => {
         gutterBottom
         sx={{ color: "#b0b0b0" }}
       >
-        Feel free to reach out for collaborations or just a friendly hello!
+        {i18next.t("contact.welcome_sentence")}
       </Typography>
       <Box
         component="form"
@@ -57,7 +58,7 @@ const ContactMe = () => {
         }}
       >
         <TextField
-          label="Name"
+          label={i18next.t("contact.name")}
           variant="outlined"
           fullWidth
           InputProps={{
@@ -93,7 +94,7 @@ const ContactMe = () => {
           }}
         />
         <TextField
-          label="Email"
+          label={i18next.t("contact.email")}
           type="email"
           variant="outlined"
           fullWidth
@@ -130,7 +131,7 @@ const ContactMe = () => {
           }}
         />
         <TextField
-          label="Message"
+          label={i18next.t("contact.message")}
           multiline
           rows={4}
           variant="outlined"
@@ -195,7 +196,7 @@ const ContactMe = () => {
             },
           }}
         >
-          Contact Message
+          {i18next.t("buttons.send_contact")}
         </Button>
       </Box>
     </Container>

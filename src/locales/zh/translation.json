@@ -9,7 +9,8 @@
     "switch_to_english": "切換到英文",
     "switch_to_chinese": "切換到繁體中文",
     "explore_skills": "探索我的技能",
-    "contact_me": "與我聯繫"
+    "contact_me": "與我聯繫",
+    "send_contact": "立即聯繫"
   },
   "skills": {
     "categories": {
@@ -90,6 +91,12 @@
         "description": "為數位與媒體整合設計優雅簡約的用戶體驗網站。"
       }
     }
+  },
+  "contact":{
+    "welcome_sentence": "歡迎隨時聯絡，不論是合作提案還是簡單的打聲招呼，我都很樂意！",
+    "name": "您的稱呼",
+    "email": "電子郵件",
+    "message": "信息內容"
   },
   "footer": {
     "copyright": "© 2024 Zii 網站。保留所有權利。"
