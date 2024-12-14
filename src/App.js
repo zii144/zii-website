@@ -6,6 +6,7 @@ import ZCardStack from "./components/ZCardStack";
 import Navigation from "./components/Navigation";
 import SkillSet from "./components/SkillSet";
 import ContactMe from "./components/ContactMe";
+import TranslationButtonToggle from "./components/TranslationButtoToggle";
 
 import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
@@ -30,6 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Navigation />
+      <TranslationButtonToggle />
       <Routes>
         <Route
           path=""

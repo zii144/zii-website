@@ -90,6 +90,48 @@
         "name": "WordPress",
         "description": "Customized WordPress websites for elegant, minimal UX design and media integration."
       }
+    }, 
+    "cards": {
+      "gameDesign": {
+        "title": "Game Design",
+        "description": "Led the design and development of the 'Fish Helper' mini-game, handling everything from conceptualization to implementation. Crafted user interfaces and gameplay elements tailored to client needs, ensuring alignment with brand style and user goals. Injected engaging elements and immersive visuals to deliver an outstanding experience."
+      },
+      "unityLearningPlatform": {
+        "title": "Unity Learning Platform Development",
+        "description": "Developed a digital learning platform for elementary students using Unity. Integrated 3D models, animations, and scene management to create an engaging, immersive educational environment, paving the way for innovative EdTech solutions."
+      },
+      "uiUxDesign": {
+        "title": "UI and UX Design",
+        "description": "Specialized in creating seamless, intuitive user experiences and visually consistent interfaces. Transformed user needs into efficient design solutions, perfectly aligned with brand image and market demands."
+      },
+      "arDevelopment": {
+        "title": "AR Application Development",
+        "description": "Expertly utilized AR Foundation to develop cutting-edge augmented reality applications, creating immersive and interactive experiences for education, exhibitions, and branding."
+      },
+      "videoEditing": {
+        "title": "Professional Video Editing",
+        "description": "Provided end-to-end video editing services, from scripting to visual effects. Proficient in Adobe Premiere and After Effects, delivering visually captivating and narrative-rich video content."
+      },
+      "shortVideoProduction": {
+        "title": "Short Video Production",
+        "description": "Specialized in producing short videos, from rapid conceptualization to precise execution. Designed captivating content optimized for social media to effectively engage target audiences."
+      },
+      "webDesign": {
+        "title": "Web Design",
+        "description": "Designed professional and visually compelling websites with a focus on minimalistic and elegant interfaces. Used black, white, and gray tones to highlight key content and enhance the user experience."
+      },
+      "posterDesign": {
+        "title": "Poster and Print Design",
+        "description": "Specialized in designing posters and printed materials, providing high-quality visual solutions that balance brand identity with engaging storytelling. Attention to color schemes and layout ensures impactful results."
+      },
+      "modeling": {
+        "title": "3D Modeling",
+        "description": "Created a 1:1 scale model of Chai Wan Kok Catholic Primary School using Blender, applied to the school's metaverse learning platform. The model accurately represents the campus architecture, enhancing student immersion and learning."
+      },
+      "virtualLearningPlatform": {
+        "title": "Virtual Learning Platform for HK Primary School",
+        "description": "Led the end-to-end development of a virtual learning platform, combining 3D modeling, Unity C# programming, and shader technology. Integrated Firebase for data management, providing an immersive and interactive learning environment."
+      }
     }
   },
   "contact":{

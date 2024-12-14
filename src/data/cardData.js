@@ -1,75 +1,83 @@
 const cardData = [
   {
+    skillType: "gameDesign",
     id: 1,
     title: "小遊戲設計",
     url: "https://drive.google.com/thumbnail?id=1gnnO1juWKUm_xuU94PI7naVzH_8GkQwT&sz=w1000",
     description:
-      "由零開始創作小遊戲「養魚小幫手」，包辦遊戲流程設計，仔細按照客戶需求設計界面、遊戲元件，確保內容全部符合使用者需要，包括視覺風格、遊戲化程度、色彩表現；確保所有視覺元素風格一致。",
+      "全程主導小遊戲「養魚小幫手」的創作，從概念構想到實現，根據客戶需求精心設計遊戲流程與界面。確保每一個視覺細節都與品牌風格和目標用戶匹配，並為遊戲注入高度的趣味性與沉浸感，展現卓越的創意與執行能力。",
   },
   {
+    skillType: "unityLearningPlatform",
     id: 2,
     title: "Unity 教學平台開發",
     url: "https://drive.google.com/thumbnail?id=1gnnO1juWKUm_xuU94PI7naVzH_8GkQwT&sz=w1000",
     description:
-      "利用 Unity 開發互動教學平台，專為小學生設計的數位學習世界，涵蓋 3D 模型、動畫、場景管理等，使學習過程更具沉浸感。",
+      "以 Unity 開發專為小學生打造的數位學習平台，創造充滿吸引力的互動體驗。整合 3D 模型、動畫與場景管理技術，構建沉浸式學習環境，為教育科技開啟全新可能性。",
   },
   {
+    skillType: "uiUxDesign",
     id: 3,
     title: "UI and UX 設計",
     url: "https://static.vecteezy.com/system/resources/previews/000/602/787/original/creative-letter-z-logo-concept-design-templates-vector.jpg",
     description:
-      "專注於 UI 和 UX 設計，確保使用者體驗流暢且直觀，並達到視覺設計的一致性與品牌需求。設計過程中考慮互動性與功能性，提升使用者滿意度。",
+      "專注於 UI 和 UX 設計，致力於提供簡潔、直觀且功能完備的用戶體驗。憑藉對用戶需求的深刻理解，將創意轉化為高效的設計解決方案，充分滿足品牌的形象定位與市場需求。",
   },
   {
+    skillType: "arDevelopment",
     id: 4,
     title: "AR 應用開發",
     url: "https://static.vecteezy.com/system/resources/previews/000/602/787/original/creative-letter-z-logo-concept-design-templates-vector.jpg",
     description:
-      "使用 AR Foundation 開發增強現實應用，提供用戶互動式體驗，應用於教育及展示環境，增強視覺互動與沉浸式學習效果。",
+      "專業運用 AR Foundation 技術開發增強現實應用，結合創新思維與技術實力，構建極具沉浸感的互動式場景，為教育、展示和品牌推廣提供突破性的體驗解決方案。",
   },
   {
+    skillType: "videoEditing",
     id: 5,
     title: "專業影片剪輯",
     url: "https://static.vecteezy.com/system/resources/previews/000/602/787/original/creative-letter-z-logo-concept-design-templates-vector.jpg",
     description:
-      "進行專業影片剪輯工作，從腳本編寫到特效加入，熟練掌握 Adobe Premiere 和 After Effects，確保影片質感與流暢度。",
+      "提供專業的影片剪輯服務，涵蓋從腳本策劃到視覺特效的全流程。精通 Adobe Premiere 和 After Effects，創造出既能吸引目光又富有敘事性的視覺作品，為客戶實現品牌價值的最大化。",
   },
   {
+    skillType: "shortVideoProduction",
     id: 6,
     title: "短影片製作",
     url: "https://drive.google.com/thumbnail?id=1-YX7sPFvJ4Kl-xQte7SULEH_FVTf3Vho&sz=w1000",
     description:
-      "專注於短影片製作，包括影片拍攝、快速剪輯和優化，適合社交媒體推廣，針對目標受眾設計吸引人內容。",
+      "專注於短影片製作，善於快速構思與精確執行，從影片拍攝到後期優化，為社交媒體推廣創造高質量、吸引目標受眾的內容，助力客戶拓展品牌影響力。",
   },
   {
+    skillType: "webDesign",
     id: 7,
     title: "網站設計",
     url: "https://drive.google.com/thumbnail?id=1-_Vld-WErsXY27_o9BvJunwL2av3RnCl&sz=w1000",
     description:
-      "設計專業網站，著重於簡潔大方的使用者介面，運用黑白灰的色彩搭配，突出重要內容，確保觀眾能專注於核心資訊。",
+      "設計專業且極具吸引力的網站，採用簡約大方的介面設計，透過黑白灰的色彩策略突出關鍵信息，為用戶創建直觀且高效的瀏覽體驗，同時增強品牌的專業形象。",
   },
   {
+    skillType: "posterDesign",
     id: 8,
-    title: "海報及印刷品設計", //https://drive.google.com/file/d/1--CurQZ3U1F64FnN-vkqWuoOtfN75V3x/view?usp=share_link
+    title: "海報及印刷品設計",
     url: "https://drive.google.com/thumbnail?id=1--CurQZ3U1F64FnN-vkqWuoOtfN75V3x&sz=w1000",
     description:
-      "專精於海報及印刷材料設計，為客戶打造具吸引力的視覺設計，包含標誌設計、版面配置及配色策略，確保符合品牌形象和宣傳效果。",
+      "專精於海報與印刷品設計，從品牌識別到視覺敘事，為客戶提供高質量的設計解決方案。細緻考量配色與版面布局，確保每件作品既符合品牌形象，又能打動目標受眾。",
   },
   {
+    skillType: "modeling",
     id: 9,
-    title: "3D 建模", //https://drive.google.com/file/d/1AW2z8CYT3tLvclozs3TMS5dO1PYEB9WK/view?usp=share_link
+    title: "3D 建模",
     url: "https://drive.google.com/thumbnail?id=1AW2z8CYT3tLvclozs3TMS5dO1PYEB9WK&sz=w1000",
     description:
-      "我曾經用 Blender 建造過香港柴灣角天主教小學的 1:1 模型，其後用於學校元宇宙虛擬學習平台開發，模型精確再現了學校建築，提升學生在虛擬平台上的沉浸體驗，並應用於互動學習與教育活動中。",
+      "以 Blender 製作香港柴灣角天主教小學的精準 1:1 模型，應用於學校的元宇宙虛擬學習平台。模型忠實還原學校建築，提升學生在虛擬世界中的學習體驗，展示出對教育科技應用的深刻理解與實踐能力。",
   },
   {
+    skillType: "virtualLearningPlatform",
     id: 10,
     title: "香港小學虛擬學習平台",
     url: "https://drive.google.com/thumbnail?id=1Jk0qXl_iAPoWOh-80AJgmE4hxzcRbzj-&sz=w1000",
     description:
-      "一人包辦所有開發流程，由 3D modeling 開始，到 Unity 寫 C#、shader 等技術實現，最終使用 Firebase 作為 Backend 實現登入流程、資料管理等業務，打造一個完整的虛擬學習環境，讓學生可透過虛擬平台進行互動學習。",
+      "全程主導虛擬學習平台的開發，包括 3D 建模、Unity 中的 C# 程式開發與 Shader 技術，並結合 Firebase 作為後端資料管理。此平台為小學生提供沉浸式互動學習環境，展現出對技術整合與創新教育的深厚專業素養。",
   },
-  // Add more card objects as needed
 ];
-
 export default cardData;
