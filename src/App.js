@@ -1,5 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import DotRing from "./components/DotRing";
+import MouseContextProvider, { MouseContext } from "./context/mouse-context";
 
 import GradientBackground from "./components/GradientBackground";
 import ZCardStack from "./components/ZCardStack";
@@ -7,6 +9,7 @@ import Navigation from "./components/Navigation";
 import SkillSet from "./components/SkillSet";
 import ContactMe from "./components/ContactMe";
 import TranslationButtonToggle from "./components/TranslationButtoToggle";
+import VideoGallery from "./components/VideoGallery";
 
 import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
@@ -29,25 +32,29 @@ function App() {
   }, [location]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Navigation />
-      <TranslationButtonToggle />
-      <Routes>
-        <Route
-          path=""
-          element={
-            <div className="app-container">
-              <GradientBackground />
-              <div className="content-container">
-                <ZCardStack />
+    <MouseContextProvider>
+      <ThemeProvider theme={theme}>
+        <DotRing />
+        <Navigation />
+        <TranslationButtonToggle />
+        <Routes>
+          <Route
+            path=""
+            element={
+              <div className="app-container">
+                <GradientBackground />
+                <div className="content-container">
+                  <ZCardStack />
+                </div>
               </div>
-            </div>
-          }
-        />
-        <Route path="/skills" element={<SkillSet />} />
-        <Route path="/contactMe" element={<ContactMe />} />
-      </Routes>
-    </ThemeProvider>
+            }
+          />
+          <Route path="/skills" element={<SkillSet />} />
+          <Route path="/contactMe" element={<ContactMe />} />
+          <Route path="/videoGallery" element={<VideoGallery />} />
+        </Routes>
+      </ThemeProvider>
+    </MouseContextProvider>
   );
 }
 

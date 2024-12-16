@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=LXGW+WenKai+Mono+TC:wght@300;400;700&family=LXGW+WenKai+TC:wght@300;400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* On top of everything */
+  pointer-events: none;
+}
+/* Custom Cursor Styling */
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 150ms ease-out;
+  z-index: 9999;
+  pointer-events: none;
+  animation: pulse 0.6s infinite ease-in-out;
+}
+
+
+/* Hide the default browser cursor */
 html,
 body {
   background-color: #282c34;
@@ -11,26 +41,21 @@ body {
   padding: 0;
   min-height: 100vh;
   overscroll-behavior: none;
+  cursor: none; /* Hide the default cursor */
 }
 
-
-#root {
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-}
-
-
-*,
-*::after, 
-*::before {
-  box-sizing: border-box;
-}
-
-:root {
-  --step0: #4f5a74;
-  --step1: #bad5ea;
-  --step2: #0a0c38;
-  --step3: #356d94;
-  --step4: #b3c1ff;
+/* Animation for the ring */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }

@@ -31,5 +31,6 @@
     color: #ffffff; /* White text for contrast */
     display: flex;
     padding: 1.8px;
+    cursor: none;
   }
   
