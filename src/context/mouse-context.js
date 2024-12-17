@@ -10,6 +10,7 @@ const MouseContextProvider = (props) => {
 
   const cursorChangeHandler = (type) => {
     setCursorType(type);
+    console.log(type);
   };
 
   return (

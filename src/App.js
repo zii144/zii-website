@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import DotRing from "./components/DotRing";
-import MouseContextProvider, { MouseContext } from "./context/mouse-context";
 
 import GradientBackground from "./components/GradientBackground";
 import ZCardStack from "./components/ZCardStack";
@@ -32,29 +31,27 @@ function App() {
   }, [location]);
 
   return (
-    <MouseContextProvider>
-      <ThemeProvider theme={theme}>
-        <DotRing />
-        <Navigation />
-        <TranslationButtonToggle />
-        <Routes>
-          <Route
-            path=""
-            element={
-              <div className="app-container">
-                <GradientBackground />
-                <div className="content-container">
-                  <ZCardStack />
-                </div>
+    <ThemeProvider theme={theme}>
+      <DotRing />
+      <Navigation />
+      <TranslationButtonToggle />
+      <Routes>
+        <Route
+          path=""
+          element={
+            <div className="app-container">
+              <GradientBackground />
+              <div className="content-container">
+                <ZCardStack />
               </div>
-            }
-          />
-          <Route path="/skills" element={<SkillSet />} />
-          <Route path="/contactMe" element={<ContactMe />} />
-          <Route path="/videoGallery" element={<VideoGallery />} />
-        </Routes>
-      </ThemeProvider>
-    </MouseContextProvider>
+            </div>
+          }
+        />
+        <Route path="/skills" element={<SkillSet />} />
+        <Route path="/contactMe" element={<ContactMe />} />
+        <Route path="/videoGallery" element={<VideoGallery />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 

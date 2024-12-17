@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { animated, to, useSprings } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import Modal from "./ZModal";
 import cardData from "../data/cardData"; // Correct import
 
 import styles from "../style.card.stack.module.css";
+import { MouseContext } from "../context/mouse-context";
 
 const toSpring = (i) => ({
   x: 0,
@@ -79,6 +80,8 @@ function Deck() {
     setSelectedCard(null);
   };
 
+  const { cursorChangeHandler } = useContext(MouseContext);
+
   return (
     <>
       {props.map(({ x, y, rot, scale }, i) => (
@@ -91,6 +94,8 @@ function Deck() {
               //backgroundImage: `url(https://drive.google.com/thumbnail?id=1gnnO1juWKUm_xuU94PI7naVzH_8GkQwT&sz=w1000)`,
               //backgroundImage: `url(${cardData[i].url})`,
             }}
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
             onClick={() => openModal(cardData[i])}
           />
         </animated.div>
