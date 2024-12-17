@@ -30,23 +30,51 @@
   animation: pulse 0.6s infinite ease-in-out;
 }
 
+.ring.hovered {
+  width: 60px; /* Larger size for a bolder effect */
+  height: 60px;
+  border: none;
+  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.85); /* Slightly transparent black */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2); /* Soft glowing shadow */
+  transform: translate(-50%, -50%) scale(1.2); /* Gentle scaling */
+  transition: 
+    transform 250ms ease-out,
+    background-color 300ms ease,
+    box-shadow 300ms ease; /* Smooth transitions */
+  animation: ring-pop 0.6s ease-out forwards; /* Enhanced pop effect */
+}
+
+/* Smooth animation for the dot on hover */
+.dot.hovered {
+  background-color: white;
+  width: 18px; /* Slightly larger default size to reduce pixelation */
+  height: 18px;
+  transform: scale(1.8); /* Smooth scaling */
+  transition: 
+    transform 250ms ease-out, 
+    background-color 300ms ease, 
+    box-shadow 250ms ease;
+  box-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.6), 
+    0 0 15px rgba(255, 255, 255, 0.1); /* Soft glow effect */
+  will-change: transform, box-shadow; /* Optimize for scaling and shadow */
+  backface-visibility: hidden; /* Prevent pixelation */
+  animation: dot-pop 0.4s ease-out forwards; /* Smoother pop animation */
+}
 
 /* Keyframes for ring pop effect */
 @keyframes ring-pop {
   0% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.7;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
   50% {
     transform: translate(-50%, -50%) scale(1.15);
     opacity: 0.85;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   }
   100% {
     transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.9;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   }
 }
 
