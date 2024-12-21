@@ -9,6 +9,7 @@
   padding: 0 15px;
   align-items: center;
   justify-content: center;
+  z-index: 12;
 }
 
 .modalContent {
@@ -75,4 +76,5 @@
 .closeButton:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);
+  cursor: none;
 }

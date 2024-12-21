@@ -1,9 +1,13 @@
-import React from "react";
+import { React, useContext } from "react";
 import { useSpring, animated, useSpringRef, useChain } from "@react-spring/web";
 import { useTranslation } from "react-i18next";
 import styles from "../style.modal.module.css";
 
+import { MouseContext } from "../context/mouse-context";
+
 function Modal({ isOpen, onClose, cardData }) {
+  const { cursorChangeHandler } = useContext(MouseContext);
+
   const { t } = useTranslation();
 
   // Fade-in and scale-up animation for modal entrance
@@ -57,7 +61,15 @@ function Modal({ isOpen, onClose, cardData }) {
           style={pulse}
         />
         <p className={styles.modalDescription}>{description}</p>
-        <button onClick={onClose} className={styles.closeButton}>
+        <button
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+          onClick={() => {
+            onClose();
+            cursorChangeHandler("");
+          }}
+          className={styles.closeButton}
+        >
           關閉
         </button>
       </animated.div>

@@ -1,0 +1,220 @@
+.videoPlayerPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.videoPlayerContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.videoPlayerContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.videoOverlay {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.videoContainer {
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.videoListContainer {
+    position: absolute;
+    top: 10%;
+    right: 3%;
+    height: 80%;
+    width: 320px;
+    overflow-y: scroll;
+    background: none;
+    border-radius: 12px;
+    padding: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Visible and Hidden States */
+.videoListContainer.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* When the List is Hidden */
+.videoListContainer.hidden {
+    opacity: 0;  /* Gradual fade */
+    transform: translateX(100%);  /* Slide right to hide the container */
+    pointer-events: none;
+}
+
+/* Fade Out Animation for Cards */
+.videoCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.876);
+    color: rgba(255, 255, 255);
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    width: 100%;
+    cursor: pointer;
+    scroll-snap-align: end;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, opacity 0.5s ease;
+    transform-origin: center;
+    opacity: 1;
+}
+
+/* Animation: Slide Left and Fade Out */
+.videoListContainer.hidden .videoCard {
+    transform: translateX(-40px);  /* Slide left */
+    opacity: 0;  /* Fade out */
+}
+
+/* Reset to Full Opacity When Visible */
+.videoListContainer.visible .videoCard {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toggleButton {
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    padding: 10px 20px;
+    background-color: #2ea043;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 15;
+    transition: background-color 0.3s;
+}
+
+.toggleButton:hover {
+    background-color: #26a437;
+}
+
+.videoListContainer {
+    scroll-snap-type: y proximity;
+}
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.videoListContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Video Card Styles */
+.videoCard.expanded {
+    background-color: #26b841d5;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: rgba(197, 197, 197, 0.5);
+}
+
+.videoThumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.videoCard:not(.expanded) {
+    transform: scale(0.9);
+    filter: grayscale(70%);
+    color: rgb(66, 66, 66);
+}
+
+/* Detail Section */
+.videoCard.expanded .videoDetail {
+    opacity: 1;
+    max-height: 100px;
+}
+
+.videoDetail {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Video Info Section */
+.videoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Episode Text */
+.videoCard h3 {
+    margin: 0;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Description Text */
+.videoCard p {
+    margin: 1px 0;
+    font-size: 0.85rem;
+}
+
+/* Subtitle or Detail Text */
+.videoCard small {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Hover Effect */
+.videoCard:hover {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 255, 100, 0.1);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+/* Grayscale for Inactive Cards */
+.videoCard:not(.expanded) img,
+.videoCard:not(.expanded) h3,
+.videoCard:not(.expanded) small {
+    filter: grayscale(10%);
+}
