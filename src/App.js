@@ -14,6 +14,7 @@ import theme from "./components/colorTheme";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { useEffect } from "react";
+import Experiment from "./components/Experiment";
 
 function App() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function App() {
         <Route path="/skills" element={<SkillSet />} />
         <Route path="/contactMe" element={<ContactMe />} />
         <Route path="/videoGallery" element={<VideoGallery />} />
+        <Route path="/experiment" element={<Experiment />} />
       </Routes>
     </ThemeProvider>
   );
